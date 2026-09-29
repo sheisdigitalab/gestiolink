@@ -3,11 +3,34 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 /* Menú móvil */
 const header = document.querySelector('.header');
 const menuBtn = document.querySelector('.menu-btn');
-menuBtn.addEventListener('click', () => {
-  const open = header.classList.toggle('open');
+const mnav = document.getElementById('mnav');
+const setMenu = open => {
   menuBtn.setAttribute('aria-expanded', open);
   menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  document.body.classList.toggle('menu-open', open);
+  if (open) {
+    mnav.hidden = false;
+    requestAnimationFrame(() => mnav.classList.add('is-open'));
+    mnav.querySelector('a').focus({ preventScroll: true });
+  } else {
+    mnav.classList.remove('is-open');
+    setTimeout(() => { if (menuBtn.getAttribute('aria-expanded') === 'false') mnav.hidden = true; }, reduceMotion ? 0 : 300);
+  }
+};
+menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+mnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', e => {
+  if (menuBtn.getAttribute('aria-expanded') !== 'true') return;
+  if (e.key === 'Escape') { setMenu(false); menuBtn.focus(); }
+  if (e.key === 'Tab') {
+    // El foco se queda dentro del menú (botón de cerrar incluido)
+    const items = [menuBtn, ...mnav.querySelectorAll('a')];
+    const i = items.indexOf(document.activeElement);
+    if (e.shiftKey && i <= 0) { e.preventDefault(); items[items.length - 1].focus(); }
+    else if (!e.shiftKey && i === items.length - 1) { e.preventDefault(); items[0].focus(); }
+  }
 });
+window.matchMedia('(min-width: 1081px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 
 /* Cabecera compacta al bajar */
 const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 24);
