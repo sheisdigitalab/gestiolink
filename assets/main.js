@@ -132,13 +132,13 @@ const finder = document.querySelector('[data-finder]');
 if (finder) {
   const data = {
     programa: {
-      img: 'oficina.jpg', title: 'Programa de gestión a medida',
+      img: 'colegas.jpg', title: 'Programa de gestión a medida',
       text: 'Facturación, almacén y clientes en una sola herramienta hecha para tu forma de trabajar, con plazos y precio cerrado.',
       list: ['Facturas y albaranes conectados', 'Control de stock y pedidos', 'Migramos tus datos actuales'],
       more: 'servicios.html#programas-a-medida', cta: 'Pedir presupuesto'
     },
     mantenimiento: {
-      img: 'soporte.jpg', title: 'Mantenimiento informático',
+      img: 'llamada.jpg', title: 'Mantenimiento informático',
       text: 'Una cuota ajustada a tu empresa para que tus equipos no fallen y, si lo hacen, se resuelva el mismo día.',
       list: ['Soporte inmediato por teléfono o en remoto', 'Revisiones y copias preventivas', 'Prioridad para ir a tu oficina'],
       more: 'servicios.html#mantenimiento', cta: 'Calcular mi cuota'
@@ -156,7 +156,7 @@ if (finder) {
       more: 'servicios.html#tecnico', cta: 'Pedir cita'
     },
     equipos: {
-      img: 'impresora.jpg', title: 'Equipos y periféricos',
+      img: 'equipos.jpg', title: 'Equipos y periféricos',
       text: 'Te asesoramos y te instalamos ordenadores, servidores, impresoras y consumibles de primeras marcas, listos para trabajar.',
       list: ['Distribuidores oficiales', 'Configurado e instalado', 'Precios ajustados'],
       more: 'servicios.html#hardware', cta: 'Pedir presupuesto'
