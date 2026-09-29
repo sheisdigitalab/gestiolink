@@ -699,3 +699,26 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 /* Dos secciones blancas seguidas: no duplicar el espacio */
 .section:not(.bg-paper):not(.bg-blush):not(.bg-sky):not(.dark) + .section:not(.bg-paper):not(.bg-blush):not(.bg-sky):not(.dark){padding-top:0}
 .brands{border-bottom:0}
+
+/* ============ Revisión de la home ============ */
+/* Mosaico: contenido alineado arriba y flecha en todas las tarjetas */
+.tile--color{min-height:210px}
+.tile--color svg:first-of-type{margin-bottom:0}
+.tile--color h3{margin-top:2.25rem}
+.tile .tile__go{position:absolute;top:1.25rem;right:1.25rem;width:40px;height:40px;border-radius:50%;background:var(--white);color:var(--ink);display:grid;place-items:center;transform:rotate(-45deg);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.tile .tile__go svg{width:16px;height:16px;margin:0;color:var(--ink)}
+.tile:hover .tile__go,.tile:focus-visible .tile__go{transform:rotate(0)}
+.tile.ink .tile__go{background:var(--sky)}
+/* Programas a medida */
+.prog .ctas{margin-top:2rem;align-items:center}
+.prog__media > img{aspect-ratio:5/4}
+/* Marcas como cierre del bloque del proceso */
+.brands.bg-paper{padding-block:0 clamp(2.5rem, 2rem + 2vw, 3.5rem)}
+.brands.bg-paper .wrap{border-top:1px solid var(--line);padding-top:clamp(1.75rem, 1.5rem + 1vw, 2.5rem)}
+.brands img{height:34px}
+.brands .tv{height:44px}
+.brands .mb{height:50px}
+/* Bloque final: formas del logo visibles */
+.cta__shapes{right:-34px;top:-44px;translate:none;width:170px;height:200px}
+@media (min-width:861px){.cta__box{padding-right:clamp(9rem, 6rem + 6vw, 13rem)}}
+@media (max-width:860px){.cta__shapes{display:none}}
