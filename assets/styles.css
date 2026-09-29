@@ -729,3 +729,31 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .welcome__play-ico{width:76px;height:76px;background:var(--white);color:var(--ink);box-shadow:var(--shadow)}
 .welcome__play-ico svg{width:24px;height:24px}
 .welcome__video::after{background:rgba(20,28,40,.15)}
+
+/* ============ Home móvil: bloques más compactos ============ */
+@media (max-width:600px){
+  /* Carruseles horizontales a sangre */
+  .finder__chips,.process__steps{flex-wrap:nowrap;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-inline:calc(-1 * var(--gutter));padding-inline:var(--gutter);scroll-padding-inline:var(--gutter)}
+  .finder__chips::-webkit-scrollbar,.process__steps::-webkit-scrollbar{display:none}
+  .finder{padding-inline:var(--gutter);overflow:hidden;grid-template-columns:minmax(0,1fr)}
+  .finder > *,.process > *{min-width:0}
+  .finder__chips{margin-inline:calc(-1 * var(--gutter))}
+  .finder__chips{display:flex;padding-bottom:.25rem}
+  .chip-btn{white-space:nowrap;scroll-snap-align:start;flex:none}
+  .process__steps{display:flex;gap:.75rem;padding-bottom:.5rem}
+  .process__step{flex:0 0 82%;scroll-snap-align:start}
+  .process__steps:focus-visible{outline-offset:-2px}
+  /* Mantenimiento: lista compacta */
+  .checks{gap:.5rem}
+  .checks li{display:grid;grid-template-columns:20px 1fr;column-gap:.85rem;padding:.9rem 1rem}
+  .checks li svg{grid-row:span 2;margin:2px 0 0}
+  .maint__media{aspect-ratio:1/.8}
+  /* Servicios: tarjetas de color sin hueco */
+  .tile--color{min-height:0}
+  .tile--color h3{margin-top:1.25rem}
+  .tile--photo,.tile--photo.sm{min-height:260px}
+}
+
+.prog > *{min-width:0}
+@media (max-width:1000px){.prog{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:400px){.app th,.app td{padding-inline:.6rem}.app td:first-child,.app th:first-child{display:none}}
