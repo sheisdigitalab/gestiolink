@@ -795,8 +795,20 @@ body.menu-open{overflow:hidden}
 @media (min-width:1081px){.mnav{display:none!important}}
 @media (prefers-reduced-motion:reduce){.mnav,.mnav__links a,.mnav__foot{transition:none;opacity:1;transform:none}}
 
-/* Buscador en móvil: el carrusel se desvanece en los bordes para indicar que se desliza */
+
+/* Buscador en móvil: opciones en dos columnas, todas visibles */
 @media (max-width:600px){
-  .finder__chips{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 var(--gutter),#000 calc(100% - 56px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 var(--gutter),#000 calc(100% - 56px),transparent 100%);padding-right:56px}
-  .finder__hint::after{content:" Desliza para ver más."}
+  .finder__chips{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-inline:0;padding:0;overflow:visible;scroll-snap-type:none}
+  .chip-btn{white-space:normal;min-height:56px;padding:.6rem .75rem;display:flex;align-items:center;text-align:left;line-height:1.25}
+}
+
+/* Así trabajamos en móvil: línea de tiempo vertical compacta, sin deslizar */
+@media (max-width:600px){
+  .process__steps{display:grid;gap:0;margin-inline:0;padding:0;overflow:visible;scroll-snap-type:none}
+  .process__step{flex:none;border:0;border-radius:0;background:transparent;padding:0 0 1.5rem 3.5rem;position:relative;gap:.3rem}
+  .process__step:last-child{padding-bottom:0}
+  .process__step .ico{display:none}
+  .process__step::before{content:"0" counter(p);right:auto;left:0;top:-.15rem;width:40px;height:40px;border-radius:50%;background:var(--ink);color:var(--white);font-size:var(--fs-6);letter-spacing:0;display:grid;place-items:center}
+  .process__step:not(:last-child)::after{content:"";position:absolute;left:19.5px;top:2.75rem;bottom:.5rem;width:1px;background:var(--control)}
+  .process__step h3{font-size:var(--fs-4)}
 }
