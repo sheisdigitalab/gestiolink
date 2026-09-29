@@ -20,7 +20,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const revealTargets = document.querySelectorAll([
   '.section__head', '.prog > *', '.process__step', '.finder', '.tile', '.row',
   '.value', '.dl', '.cli > *', '.checks li', '.about > *', '.products > *',
-  '.warranty', '.quote .wrap', '.cta__box', '.facts li', '.contact > *', '.remote > *', '.collage'
+  '.warranty', '.welcome__brand', '.welcome__panel', '.quote .wrap', '.cta__box', '.facts li', '.contact > *', '.remote > *', '.collage'
 ].join(','));
 
 if (!reduceMotion) {
@@ -231,4 +231,14 @@ document.querySelectorAll('.subnav, .toc').forEach(nav => {
   };
   window.addEventListener('scroll', spy, { passive: true });
   spy();
+});
+
+/* Vídeo de bienvenida: se carga solo al pulsar reproducir */
+document.querySelectorAll('.welcome__video').forEach(box => {
+  const video = box.querySelector('video');
+  box.querySelector('.welcome__play').addEventListener('click', () => {
+    video.controls = true;
+    box.classList.add('playing');
+    video.play();
+  });
 });
