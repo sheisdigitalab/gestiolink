@@ -794,3 +794,9 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 body.menu-open{overflow:hidden}
 @media (min-width:1081px){.mnav{display:none!important}}
 @media (prefers-reduced-motion:reduce){.mnav,.mnav__links a,.mnav__foot{transition:none;opacity:1;transform:none}}
+
+/* Buscador en móvil: el carrusel se desvanece en los bordes para indicar que se desliza */
+@media (max-width:600px){
+  .finder__chips{-webkit-mask-image:linear-gradient(to right,transparent 0,#000 var(--gutter),#000 calc(100% - 56px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 var(--gutter),#000 calc(100% - 56px),transparent 100%);padding-right:56px}
+  .finder__hint::after{content:" Desliza para ver más."}
+}
