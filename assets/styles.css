@@ -722,3 +722,10 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .cta__shapes{right:-34px;top:-44px;translate:none;width:170px;height:200px}
 @media (min-width:861px){.cta__box{padding-right:clamp(9rem, 6rem + 6vw, 13rem)}}
 @media (max-width:860px){.cta__shapes{display:none}}
+
+/* Botón de vídeo: solo el círculo, centrado */
+.welcome__play{left:50%;top:50%;bottom:auto;translate:-50% -50%;padding:0;background:transparent;box-shadow:none}
+.welcome__play:hover{transform:scale(1.06)}
+.welcome__play-ico{width:76px;height:76px;background:var(--white);color:var(--ink);box-shadow:var(--shadow)}
+.welcome__play-ico svg{width:24px;height:24px}
+.welcome__video::after{background:rgba(20,28,40,.15)}
