@@ -132,7 +132,7 @@ const finder = document.querySelector('[data-finder]');
 if (finder) {
   const data = {
     programa: {
-      img: 'gestion.jpg', title: 'Programa de gestión a medida',
+      img: 'oficina.jpg', title: 'Programa de gestión a medida',
       text: 'Facturación, almacén y clientes en una sola herramienta hecha para tu forma de trabajar, con plazos y precio cerrado.',
       list: ['Facturas y albaranes conectados', 'Control de stock y pedidos', 'Migramos tus datos actuales'],
       more: 'servicios.html#programas-a-medida', cta: 'Pedir presupuesto'
