@@ -20,7 +20,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 const revealTargets = document.querySelectorAll([
   '.section__head', '.prog > *', '.process__step', '.finder', '.tile', '.row',
   '.value', '.dl', '.cli > *', '.checks li', '.about > *', '.products > *',
-  '.warranty', '.welcome__brand', '.welcome__panel', '.quote .wrap', '.cta__box', '.facts li', '.contact > *', '.remote > *', '.collage'
+  '.warranty', '.welcome__text', '.welcome__media', '.quote .wrap', '.cta__box', '.facts li', '.contact > *', '.remote > *', '.collage'
 ].join(','));
 
 if (!reduceMotion) {
